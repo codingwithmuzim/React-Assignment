@@ -1,0 +1,32 @@
+import React, { useRef } from 'react';
+
+const FocusInput = () => {
+    const inputRef = useRef(null);
+
+    const handleFocus = () => {
+        if (inputRef.current) {
+            inputRef.current.focus(); 
+        }
+    };
+
+    return (
+        <div style={{ margin: '20px' }}>
+            <h2>Focus the Input Field</h2>
+            <input
+                ref={inputRef}  
+                type="text"
+                placeholder="Click the button to focus me"
+                style={{ padding: '10px', width: '250px', fontSize: '16px' }}
+            />
+            <br />
+            <button
+                onClick={handleFocus}  
+                style={{ marginTop: '10px', padding: '10px 20px', fontSize: '16px' }}
+            >
+                Focus Input
+            </button>
+        </div>
+    );
+};
+
+export default FocusInput;
